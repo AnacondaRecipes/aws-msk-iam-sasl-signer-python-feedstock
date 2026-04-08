@@ -10,7 +10,7 @@ source:
   sha256: 3432d88a7c6db4887ceb1130ebaed0113bfda48b79ea811537add5f1d25fa13f
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   skip: true  # [py<38]
 
@@ -26,6 +26,8 @@ requirements:
     - click >=7.0
     - boto3 >=1.26.125
     - botocore >=1.29.125
+  run_constrained:
+    - setuptools <82
 
 test:
   source_files:
